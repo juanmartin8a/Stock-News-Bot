@@ -1,0 +1,3 @@
+Hey ${PERSON_NAME}!, 
+
+${STOCK_UPDATE}
