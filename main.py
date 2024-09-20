@@ -127,8 +127,9 @@ def read_template(filename):
     return Template(template_file_content)
 
 def stocksEmail():
-    if not os.path.exists('stocks.json'):
+    if not os.path.exists('stocks.json') or os.path.getsize('stocks.json') == 0:
         print('there is no data to update contacts with, please enter some data first by pressing 1 on first question')
+        return
     else: 
         newData = []
         with open('stocks.json', 'r') as json_file:
@@ -208,16 +209,16 @@ def stocksEmail():
 
 dataOrEmail = input('Add stocks data or send updates via email? Press "1" to add data or "2" to track the added data and send updates via email: ')
 if dataOrEmail == '1':
-    market = input('Type in a market (aapl, etc): ')
-    page_url = 'https://markets.businessinsider.com/stocks/' + market + '-stock'
+    stock = input('Type in a stock (aapl, etc): ')
+    page_url = 'https://markets.businessinsider.com/stocks/' + stock + '-stock'
     req = requests.get(page_url)
     if req.status_code == 200:
         try:
-            addStocks(market)
+            addStocks(stock)
         except KeyboardInterrupt:
             print('process ended')
     else: 
-        print('Market not found, try again')
+        print('Stock not found, try again')
 elif dataOrEmail == '2':
     try: 
         while True:
