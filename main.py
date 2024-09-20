@@ -206,7 +206,7 @@ def stocksEmail():
 
 
 
-dataOrEmail = input('add stocks data or send updates via email? Press 1 too ad data or 2 to send updates via email: ')
+dataOrEmail = input('Add stocks data or send updates via email? Press "1" to add data or "2" to track the added data and send updates via email: ')
 if dataOrEmail == '1':
     market = input('Type in a market (aapl, etc): ')
     page_url = 'https://markets.businessinsider.com/stocks/' + market + '-stock'
