@@ -1,5 +1,6 @@
 # Stock News Bot
-Old project from 2020 - 2021
+![Started](https://img.shields.io/badge/Started-Nov%202020-blue%20green.svg)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-Dec%202020-blue.svg?color=informational)
 
 This program does 2 things:
 1. Retrieve the stock information for the stocks you want.
